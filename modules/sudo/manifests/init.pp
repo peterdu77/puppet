@@ -3,12 +3,12 @@ class sudo {
          ensure => present,
     }
     
-    if $operatingsystem == "Ubuntu" {
-         package { "sudo-ldap":
-            ensure => present,
-            require => Package["sudo"],
-        }
-    }
+#    if $operatingsystem == "Ubuntu" {
+#         package { "sudo-ldap":
+#            ensure => present,
+#            require => Package["sudo"],
+#        }
+#    }
     
     file { "/etc/sudoers":
         owner => "root",
