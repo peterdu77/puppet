@@ -1,8 +1,16 @@
-node 'puppet.example.com' {
+class base {
+  include sudo, ssh
 }
-node 'web.example.com' {
+node 'puppet.lab.local' {
+  include base
 }
-node 'db.example.com' {
+node 'web.lab.local' {
+  include base
 }
-node 'mail.example.com' {
+node 'db.lab.local' {
+  include base
+}
+node 'mail.lab.local' {
+  include base
+  include postfix
 }

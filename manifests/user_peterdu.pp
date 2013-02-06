@@ -1,7 +1,7 @@
 case $operatingsystem {
-'centos', 'redhat', 'fedora': { $groupname   = 'admin'}
+'centos', 'redhat', 'fedora': { $groupname   = 'adm'}
 'ubuntu', 'debian':           { $groupname   = 'adm'}
- default:                     { $groupname   = 'admin'}
+ default:                     { $groupname   = 'adm'}
 }
 
 user { "peterdu":

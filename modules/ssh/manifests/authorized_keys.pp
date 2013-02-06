@@ -8,7 +8,7 @@
         ensure => directory,
         owner  => $user,
         mode   => '700',
-        path   => "/home/${user}/.ssh/",
+        path   => "/home/${user}/",
     }
 
 
@@ -16,7 +16,7 @@
         ensure => present,
         owner  => $user,
         mode   => '640',
-        path   => "//home/${user}/.ssh/authorized_keys",
+        path   => "/home/${user}/.ssh/authorized_keys",
         source => 'puppet:///modules/ssh/id_rsa.pub',
         require => File['.ssh'],
     }
