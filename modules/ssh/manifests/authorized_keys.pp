@@ -8,7 +8,7 @@
         ensure => directory,
         owner  => $user,
         mode   => '700',
-        path   => "/home/${user}/",
+        path   => "/home/${user}/.ssh",
     }
 
 
