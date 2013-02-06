@@ -1,5 +1,5 @@
 class mysql::install {
-  package { [ "mysql5", "mysql5client", "mysql5rt", "mysql5test", "mysql5devel" ]:
+  package { [ "mysql-server", "mysql-client", "mysql-common" ]:
   ensure => present,
   require => User["mysql"],
 }

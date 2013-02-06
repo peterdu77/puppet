@@ -1,5 +1,5 @@
 class base {
-  include sudo, ssh
+  include sudo, ssh, ntp
 }
 node 'puppet.lab.local' {
   include base
@@ -9,6 +9,7 @@ node 'web.lab.local' {
 }
 node 'db.lab.local' {
   include base
+  include mysql
 }
 node 'mail.lab.local' {
   include base
