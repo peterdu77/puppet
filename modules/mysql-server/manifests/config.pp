@@ -1,11 +1,11 @@
-class mysql::config {
+class mysql-server::config {
   file { "/etc/mysql/my.cnf":
     ensure => present,
-    source => "puppet:///modules/mysql/my.cnf",
+    source => "puppet:///modules/mysql-server/my.cnf",
     owner => "mysql",
     group => "mysql",
-    require => Class["mysql::install"],
-#    notify => Class["mysql::service"],
+    require => Class["mysql-server::install"],
+    notify => Class["mysql-server::service"]
 }
   file { "/etc/mysql":
     group => "mysql",
@@ -13,4 +13,5 @@ class mysql::config {
     recurse => true,
     require => File["/etc/mysql/my.cnf"],
   }
+ 
 }
